@@ -1,0 +1,131 @@
+# Simple workflow for deploying static content to GitHub Pages
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pedido Especial 💌</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+     
+  background-image: url('OIP.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+    }
+    .slide {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      animation: fadeIn 1s ease;
+    }
+    .active {
+      display: flex;
+    }
+    .button {
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      margin: 1rem;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 1.2rem;
+      transition: background 0.3s;
+    }
+    .button:hover {
+      background-color: #ff1493;
+    }
+    .footer {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #777;
+    }
+    .background-img {
+      width: 100%;
+      max-width: 400px;
+      margin: 1rem 0;
+      border-radius: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+  </style>
+</head>
+<body>
+  <audio id="bgMusic" autoplay muted loop>
+    <source src="Prometo.mp3" type="audio/mpeg">
+    Seu navegador não suporta áudio :(
+  </audio>
+
+  <div class="slide active" id="slide1">
+    <p>Oiii... eu espero que tenhas gostado Véldia, pedir desculpa por eu ser um pouco teimoso às vezes, não tem sido fácil, sabe?</p>
+    <button class="button" onclick="nextSlide(2); enableSound();">➡️</button>
+  </div>
+
+  <div class="slide" id="slide2">
+    <p>Conheci-te nos meus 17 anos e aprendi muito contigo, e o que me chamou mais atenção foi como criei esse império de amor e sentimentos por ti pequena...</p>
+    <button class="button" onclick="nextSlide(3)">➡️</button>
+  </div>
+
+  <div class="slide" id="slide3">
+    <p>Embora tenhamos passado por tanta coisa perto e afastados um do outro, sei que conheceste algumas pessoas e viveste alguns momentos, bem... tu tinhas que viver mesmo esses momentos pra ganhares um pouquinho de mais experiência e cresceres hahahaha...😂😂😂</p>
+    <button class="button" onclick="nextSlide(4)">➡️</button>
+  </div>
+
+  <div class="slide" id="slide4">
+    <p>Mas prontos, o bom é que voltaste e espero que com Deus no meio as coisas sigam um rumo diferente e melhor com ele ao nosso lado.</p>
+    <button class="button" onclick="nextSlide(5)">➡️</button>
+  </div>
+
+  <div class="slide" id="slide5">
+    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/..." alt="Casal pôr do sol" class="background-img">
+    <p>Tu és a minha melhor fase, a moça que mostrou o quanto é bom amar e me fazes evitar pensar em atrocidades. Contigo tudo é tão diferente, olha que já se passou quase 3 anos e mesmo assim o meu coração te pertence, já não sei o que farei pra ti mostrar o quanto eu te amo e que és a moça que eu quero pra sempre, embora seja um pouco cedo... mas confia em mim assim como eu confio em ti, não importa o que as pessoas irão dizer ou fomentar pois ctg encontrei uma felicidade jamais vista antes... portanto minha pequena shawty....</p>
+    <button class="button" onclick="nextSlide(6)">➡️</button>
+  </div>
+
+  <div class="slide" id="slide6">
+    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/..." alt="Lembranças" class="background-img">
+    <p>Palavras são poucas, embora nunca irão acabar pois tu és a minha maior fonte de inspiração, só me resta dizer...</p>
+    <button class="button" onclick="nextSlide(7)">➡️</button>
+  </div>
+
+  <div class="slide" id="slide7">
+    <h2>Aceitas namorar comigo?</h2>
+    <button class="button" onclick="nextSlide(8)">Sim 💖</button>
+    <button class="button" onclick="nextSlide(9)">Não 💔</button>
+  </div>
+
+  <div class="slide" id="slide8">
+    <h2>Obrigado minha vida, eu irei ser alguém ainda melhor por ti, amo-te muito.</h2>
+    <div class="footer">Mande print ao nosso criador JJ 💌</div>
+  </div>
+
+  <div class="slide" id="slide9">
+    <h2>Obrigado por tudo na mesma, não tenho palavras e espero que sigas a tua vida, desejo sucesso, vida boa e tudo de bom pra ti.</h2>
+    <div class="footer">Seja feliz, corte acesso a tudo envolvido e viva como nunca. Até mais 💔</div>
+  </div>
+
+  <script>
+    function nextSlide(n) {
+      document.querySelectorAll('.slide').forEach(slide => slide.classList.remove('active'));
+      document.getElementById('slide' + n).classList.add('active');
+    }
+
+    function enableSound() {
+      const audio = document.getElementById('bgMusic');
+      audio.muted = false;
+      audio.play();
+    }
+  </script>
+</body>
+</html>
